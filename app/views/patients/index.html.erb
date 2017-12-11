@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-8">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list-1" data-toggle="list" href="#list-home-1" role="tab" aria-controls="home">Ravi Soni</a>
+      <%@patients.each do |p|%>
+      <a class="list-group-item list-group-item-action" id="list-home-list-<%=p.id+1%>" data-toggle="list" href="#list-home-<%=p.id+1%>" role="tab" aria-controls="home"> <%= (p.fanme+" "+p.lname) %></a>
+      <%end%>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home-1" role="tabpanel" aria-labelledby="list-home-list-1">
+      	<div class="card bg-light mb-3">
+		  <div class="card-header">Patient Information</div>
+		  <div class="card-body">
+		  <h4 class="card-title">Patient 1</h4>
+		    <p class="card-text">First Name: Ravi</p>
+		    <p class="card-text">Last Name: Soni</p>
+		    <p class="card-text">DOB: 15-10-1990</p>
+		    <p class="card-text">Address: 12,gandhinagar,Surat</p>
+		  </div>
+		</div>
+      </div>
+      <% @patients.each do |p| %>
+   	  <div class="tab-pane fade" id="list-home-<%=p.id+1%>" role="tabpanel" aria-labelledby="list-home-list-<%=p.id+1%>">
+   	  	<div class="card bg-light mb-3">
+		  <div class="card-header">Patient Information</div>
+		  <div class="card-body">
+		  	<h4 class="card-title">Patient <%= p.id+1 %></h4>
+		    <p class="card-text">First Name: <%= p.fanme %></p>
+		    <p class="card-text">Last Name: <%= p.lname %></p>
+		    <p class="card-text">DOB: <%= p.dob %></p>
+		    <p class="card-text">Address: <%= p.address %></p>
+		  </div>
+		</div>
+   	  </div>
+   	  <%end%>
+    </div>
+  </div>
+</div>

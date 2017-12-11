@@ -1,0 +1,33 @@
+<div class="modal" id="new_patient_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Patient</h5>
+            </div>
+        <%= form_for :patient, url: '/create', html: { class: 'form-horizontal' } do %> 
+            <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputFName">First Name</label>
+                        <input type="text" name="patient[fanme]" class="form-control" id="inputFName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLName">Last Name</label>
+                        <input type="text" name="patient[lname]" class="form-control" id="inputLName" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDOB">Date of Birth</label>
+                        <input type="date-input" name="patient[dob]" class="form-control" id="inputDOB" value="2011-08-19" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <textarea  class="form-control" name= "patient[address]" id="inputAddress" placeholder="Enter Address" required></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        <%end%>
+          </div>
+        </div>
+</div>
